@@ -1796,8 +1796,8 @@
         var match, displayFn, valueName, keyName, groupByFn, valueFn, valuesFn;
         $parseOptions.init = function() {
           $parseOptions.$match = match = attr.match(options.regexp);
-          displayFn = $parse(match[2] || match[1]), valueName = match[4] || match[6], keyName = match[5], 
-          groupByFn = $parse(match[3] || ''), valueFn = $parse(match[2] ? match[1] : valueName), 
+          displayFn = $parse(match[2] || match[1]), valueName = match[4] || match[6], keyName = match[5],
+          groupByFn = $parse(match[3] || ''), valueFn = $parse(match[2] ? match[1] : valueName),
           valuesFn = $parse(match[7]);
         };
         $parseOptions.valuesFn = function(scope, controller) {
@@ -3820,7 +3820,7 @@
 
            case 'bottom':
             offset = {
-              top: position.top + position.height,
+              top: position.top + position.height > document.documentElement.clientHeight ? document.documentElement.clientHeight - actualHeight-35 : position.top + position.height,
               left: position.left + position.width / 2 - actualWidth / 2
             };
             break;

@@ -370,7 +370,7 @@ angular.module('mgcrea.ngStrap.tooltip', [ 'mgcrea.ngStrap.core', 'mgcrea.ngStra
 
          case 'bottom':
           offset = {
-            top: position.top + position.height,
+            top: position.top + position.height > document.documentElement.clientHeight ? document.documentElement.clientHeight - actualHeight-35 : position.top + position.height,
             left: position.left + position.width / 2 - actualWidth / 2
           };
           break;
